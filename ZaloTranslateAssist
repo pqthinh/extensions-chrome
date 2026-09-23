@@ -1,0 +1,37 @@
+# Chính sách quyền riêng tư — Zalo Translate Assist
+
+Cập nhật: 2026-09-24. Bản HTML để host công khai: `assets/store/privacy.html`.
+
+## Tóm tắt
+- Extension **không thu thập, không lưu trữ từ xa, không bán và không chia sẻ** dữ liệu người dùng.
+- Extension **không có máy chủ**. Không có yêu cầu mạng nào tới máy chủ của nhà phát triển hay bên thứ ba.
+- Nội dung tin nhắn Zalo chỉ được xử lý **trong trình duyệt của bạn**, và chỉ được đưa vào **tab claude.ai mà bạn đã đăng nhập** để dịch, theo cách bạn tự dán vào cuộc chat Claude.
+
+## Dữ liệu extension chạm tới
+| Dữ liệu | Mục đích | Lưu ở đâu | Gửi đi đâu |
+|---|---|---|---|
+| Văn bản tin nhắn trong nhóm Zalo bạn chọn | Tạo yêu cầu dịch, hiển thị bản dịch | Chỉ trong bộ nhớ tab, không lưu | Chỉ sang tab claude.ai trong cùng trình duyệt |
+| Văn bản bạn đang soạn trong ô chat Zalo | Dịch trước khi bạn gửi | Chỉ trong bộ nhớ tab | Chỉ sang tab claude.ai trong cùng trình duyệt |
+| Câu trả lời của Claude (JSON bản dịch) | Hiển thị / chèn vào ô chat | Chỉ trong bộ nhớ tab | Không |
+| Cài đặt (bật/tắt, tên nhóm, ngôn ngữ, URL cuộc chat Claude, selector) | Ghi nhớ tuỳ chọn | `chrome.storage.local` trên máy bạn | Không |
+
+Extension không đọc lịch sử duyệt web, cookie, mật khẩu, danh bạ, tệp đính kèm hay hình ảnh.
+
+## Bên thứ ba
+- **Zalo Web (chat.zalo.me)** và **claude.ai** là dịch vụ bạn đã đăng nhập; dữ liệu bạn đưa vào đó chịu điều khoản của các dịch vụ ấy.
+  Nội dung bạn dịch sẽ nằm trong lịch sử cuộc chat claude.ai của bạn, giống như khi bạn tự dán vào.
+- Extension không tích hợp analytics, quảng cáo hay SDK theo dõi.
+
+## Quyền đã xin và lý do
+- `storage`: lưu cài đặt cục bộ.
+- `clipboardRead`, `clipboardWrite`: chỉ dùng khi bạn bấm "Sao chép yêu cầu" / "Dán từ clipboard" ở chế độ thủ công.
+- Host `https://chat.zalo.me/*`: chèn panel, đọc tin trong nhóm bạn chọn, chèn bản dịch vào ô chat.
+- Host `https://claude.ai/*`: gõ yêu cầu dịch vào ô soạn của tab claude.ai bạn đang mở và đọc câu trả lời.
+
+## Kiểm soát của bạn
+- Tắt "Tự dịch qua tab claude.ai" hoặc tắt toàn bộ extension trong popup bất kỳ lúc nào.
+- Gỡ extension sẽ xoá toàn bộ cài đặt trong `chrome.storage.local`.
+- Extension không bao giờ tự bấm gửi tin trên Zalo.
+
+## Liên hệ
+Mở issue trên kho mã nguồn của dự án hoặc email nhà phát triển ghi trên trang Chrome Web Store.
